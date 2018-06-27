@@ -49,7 +49,7 @@ def init_component():
     global rem
 
     try:
-        opts, args = getopt.getopt(sys.argv[1:], "hk:v:r", ["help", "key", "val", "rem"])
+        opts, args = getopt.getopt(sys.argv[1:], "hk:v:r", ["help", "key=", "val=", "rem"])
     except getopt.GetoptError as err:
         print(err)
         usage()
