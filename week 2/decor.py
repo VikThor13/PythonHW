@@ -2,13 +2,13 @@ import json
 import yaml
 
 def to_json(func):
-    def json_dump():
-        return json.dumps(func())
+    def json_dump(*args, **kwargs):
+        return json.dumps(func(*args, **kwargs))
     return json_dump
 
 def to_yaml(func):
-    def yaml_dump():
-        return yaml.dump(func())
+    def yaml_dump(*args, **kwargs):
+        return yaml.dump(func(*args, **kwargs))
     return yaml_dump
 
 @to_json
