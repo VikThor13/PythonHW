@@ -4,7 +4,11 @@ import tempfile
 class File:
     def __init__(self, path):
         self.path = path
-        self.file = open(self.path)
+        try:
+            self.file = open(self.path)
+        except FileNotFoundError:
+            raise FileNotFoundError("Файл не найден")
+
         self.list = []
         self.current = 0
         self.list.append([str.strip() for str in self.file])
